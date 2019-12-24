@@ -1,0 +1,10 @@
+Process : A 'Process' is sort of like an application.
+In fact, it is exactly the same as an Application as in every Application is a Process. But, there are other types of Processes too, like a 'Service' that will run in the background.
+
+Application : We all know what an 'Application' is. It implements the 'Process' interface. Applications have 'State's as their child processes. However, a 'State' is not actually a 'Process' as it doesn't have to implement any functionality from the 'Process' interface. It is only a process in literal sense.
+
+State : A 'State' in the Engine is similar to a Scene, but it doesn't handle the Rendering or the GUI. It only processes information and handles events. It may have a GUI attached to it but it only handles the events invoked by the interactions with the associated GUI. It is a process of its own. The main GUI process would be the System UI handler. It will manage the UI renders and process events related to the bare minimum UI that the system would need. For instance, the status bar, the process view, the system dialogs etc. are part of the System UI process. Process are not States. They are different.
+
+Service : A 'Service' is a background process. It may be started by the system or it may also be instantiated by an external Application. Services don't end automatically. If the system is running out of memory, it will shut itself down instead of stopping an automatically (or manually) started service. Services must not have any GUI attached to them but they may invoke GUI processes of its parent process or the System UI.
+
+I have no idea what the hell I wrote above. Let's hope I don't torture myself with THESE THINGS.
